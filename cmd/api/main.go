@@ -21,12 +21,13 @@ func main() {
 	//db connection
 
 	//Routes
+	
 
 	//server
 
 	log.Println("Starting Server on Port : ", port);
 	
-
+	http.HandleFunc("/", Hello);
 
 	err:= http.ListenAndServe(fmt.Sprintf(":%d", port), nil)
 	if err!= nil {
