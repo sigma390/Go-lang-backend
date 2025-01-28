@@ -45,3 +45,32 @@ func (app *application) Endpt(w http.ResponseWriter, r *http.Request){
 
 
 }
+
+
+func (app *application) GetNames(w http.ResponseWriter , r *http.Request){
+
+	//json banao
+	var pload = struct {
+		Name string `json:"name"`
+		Age  int    `json:"age"`
+	}{
+		Name : "BhosadPappu",
+		Age : 23,
+	}
+
+	out,err := json.Marshal(pload);
+
+	if err!= nil {
+        fmt.Println(err);
+
+    }
+
+
+	w.Header().Set("Content-Type", "application/json");
+	w.WriteHeader(http.StatusOK);
+	w.Write(out);
+
+
+
+
+}

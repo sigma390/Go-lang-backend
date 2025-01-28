@@ -14,7 +14,7 @@ func (app *application) routes() http.Handler {
 
 	mux.Get("/home", app.Home);
 	mux.Get("/endpt", app.Endpt);
-
+	mux.Get("/names", app.GetNames);
 	return mux
 
 }
